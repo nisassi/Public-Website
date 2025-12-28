@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OhNikx's Official Website</title>
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='70' font-size='70'>❯</text></svg>">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
   <!-- Background video -->
   <video id="bg-video" autoplay muted loop></video>
   <div class="overlay"></div>
 
-  <!-- Main content -->
   <div class="content">
-    <!-- Title -->
-    <h1 id="welcome-title">Welcome, user.</h1>
+    <!-- Big title -->
+    <h1 class="main-title">Welcome, user.</h1>
 
     <!-- Terminal bio -->
     <div class="terminal-bio" id="terminal">
@@ -25,54 +25,79 @@
       <span class="line" data-text='/home/ohnikx > Please make sure to report any bug in the server. You can find the link on the bottom of the page! <3'></span>
       <span class="line" data-text='/home/ohnikx > Learning C, Python, HTML and Zsh'></span>
       <span class="line" data-text='/home/ohnikx > Upcoming Content Creator. Support me!'></span>
-      <span class="line" data-text='/home/ohnikx > Here is my most recent video'></span>
+      <span class="line" data-text='/home/ohnikx > Most Recent Video'></span>
     </div>
 
     <!-- Recent Video -->
     <div class="section" id="recent-video">
       <h2>Recent Video</h2>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/KEOu88B9Sm0" 
-        title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     </div>
 
     <!-- Games -->
     <div class="section" id="games">
-      <h2>Games I Play</h2>
+      <h2>What you might see me stream...</h2>
 
       <!-- Valorant -->
       <div class="game-card" id="valorant">
         <h3>VALORANT</h3>
-        <p>Current Rank: <span id="valorant-rank">Gold 1 (updated 28/12/2025)</span></p>
+        <p>Current Rank: <span id="valorant-rank">Loading...</span></p>
         <p>Mains: Jett, Phoenix, Gekko, Cypher, Skye</p>
         <p>Sensitivity: 0.265 @ 800 DPI</p>
-        <!-- Twitter Clip -->
-        <blockquote class="twitter-tweet" data-dnt="true">
-          <p lang="en" dir="ltr">&quot;VALORANT isn&#39;t confusing&quot;<br>VALORANT: 
-            <a href="https://t.co/6Q7Gzfwy44">pic.twitter.com/6Q7Gzfwy44</a>
-          </p>
-          &mdash; slow (@slowiscool)
-          <a href="https://twitter.com/slowiscool/status/1694809764809601469?ref_src=twsrc%5Etfw">August 24, 2023</a>
-        </blockquote>
+        <video class="game-clip" autoplay muted loop playsinline>
+          <source src="clips/valorant/valoclip.mp4" type="video/mp4">
+        </video>
       </div>
 
       <!-- osu! -->
       <div class="game-card" id="osu">
         <h3>osu!</h3>
-        <video src="clips/osu!/1228.mp4" autoplay muted loop class="osu-video"></video>
         <p>Global Rank: <span id="osu-global-rank">Loading...</span></p>
         <p>Country Rank: <span id="osu-country-rank">Loading...</span></p>
         <p>Keyboard: Attack Shark x65he</p>
         <p>Tablet: Wacom CTL-4100WL</p>
         <p>Aiming style: Drag</p>
+        <video class="game-clip" autoplay muted loop playsinline>
+          <source src="clips/osu!/1228.mp4" type="video/mp4">
+        </video>
       </div>
 
       <!-- Other games -->
-      <div class="game-card">Fortnite — Not Coming Soon... Maybe</div>
-      <div class="game-card">Call of Duty — Not Coming Soon... Maybe</div>
-      <div class="game-card">Minecraft — Erm.. Yea nah it's not coming out soon</div>
+      <div class="game-card">Fortnite — Casual/Competitive player — Not Coming Soon </div>
+      <div class="game-card">Call of Duty — Casual/Competitive player — Not Coming Soon </div>
+      <div class="game-card">Minecraft — Just chillin'</div>
     </div>
 
     <!-- Equipment -->
     <div class="section" id="equipment">
       <h2>Equipment</h2>
-      <p>CPU: Inte
+      <ul>
+        <li>CPU: Intel Core i7-12700KF</li>
+        <li>RAM: 16 GB DDR4 3200MHz</li>
+        <li>Storage: 500 GiB SSD, 300 GiB SSD</li>
+        <li>GPU: PNY GeForce RTX 5070 12GB ARGB OC DLSS 4</li>
+        <li>PSU: 750W 80+ Gold Rated</li>
+        <li>Mouse: Logitech G PRO X SUPERLIGHT 2 LIGHTSPEED</li>
+        <li>Keyboard: ATTACK SHARK X65 HE 65% Wired Gaming Keyboard</li>
+        <li>Tablet: Wacom CTL-4100WL</li>
+        <li>Case: ITEK Cosmic 23</li>
+        <li>Monitor: Samsung Odyssey G4 240hz Gaming Monitor 1ms Response time</li>
+        <li>Headphones: HyperX Cloud III Gaming Headset</li>
+      </ul>
+    </div>
+
+    <!-- Social links -->
+    <div class="socials">
+      <a href="https://www.youtube.com/@OhNikx" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.youtube.com/@OhNikx2" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.tiktok.com/@ohniikx" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/ohniikx" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.twitch.tv/OhNiikx" target="_blank"><i class="fab fa-twitch"></i></a>
+      <a href="https://discord.gg/Wr3Dyacpva" target="_blank"><i class="fab fa-discord"></i></a>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
