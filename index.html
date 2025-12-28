@@ -1,45 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OhNikx | Gamer & Content Creator</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OhNikx's Official Website</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <!-- Background video -->
   <video id="bg-video" autoplay muted loop></video>
-
-  <!-- Overlay for contrast -->
   <div class="overlay"></div>
 
   <!-- Main content -->
   <div class="content">
-    <pre class="terminal-bio">
-/home/ohnikx > Accessing User "OhNikx"
-/home/ohnikx > Complete! Note: Welcome.
-/home/ohnikx > Learning C, Python and Zsh
-/home/ohnikx > Upcoming Content Creator
-    </pre>
+    <!-- Terminal bio -->
+    <div class="terminal-bio" id="terminal">
+      <span class="line" data-text='/home/ohnikx > Accessing User "OhNikx"'></span>
+      <span class="line" data-text='/home/ohnikx > Login Complete! Additional Note From Creator: Welcome to my Website!'></span>
+      <span class="line" data-text='/home/ohnikx > Learning C, Python, HTML and Zsh'></span>
+      <span class="line" data-text='/home/ohnikx > Upcoming Content Creator. Support me!'></span>
+      <span class="line" data-text='/home/ohnikx > Most Recent Video'></span>
+    </div>
 
-    <!-- Recent video section -->
-    <div class="section">
+    <!-- Recent Video -->
+    <div class="section" id="recent-video">
       <h2>Recent Video</h2>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID" 
         title="YouTube video player" frameborder="0" allowfullscreen></iframe>
     </div>
 
-    <!-- Games section -->
-    <div class="section">
+    <!-- Games -->
+    <div class="section" id="games">
       <h2>Games I Play</h2>
-      <ul>
-        <li>VALORANT</li>
-        <li>Fortnite</li>
-        <li>Call of Duty</li>
-        <li>osu!</li>
-        <li>Minecraft</li>
-      </ul>
+
+      <!-- Valorant -->
+      <div class="game-card" id="valorant">
+        <h3>VALORANT</h3>
+        <p>Current Rank: <span id="valorant-rank">Loading...</span></p>
+        <p>Mains: Jett, Phoenix, Gekko, Cypher, Skye</p>
+      </div>
+
+      <!-- osu! -->
+      <div class="game-card" id="osu">
+        <h3>osu!</h3>
+        <p>Global Rank: <span id="osu-global-rank">Loading...</span></p>
+        <p>Country Rank: <span id="osu-country-rank">Loading...</span></p>
+      </div>
+
+      <!-- Other games -->
+      <div class="game-card">Fortnite — Casual/Competitive player</div>
+      <div class="game-card">Call of Duty — Casual/Competitive player</div>
+      <div class="game-card">Minecraft — Just chillin'</div>
     </div>
 
     <!-- Social links -->
