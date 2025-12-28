@@ -1,4 +1,4 @@
-// Background videos
+// Random background video
 const videos = [
   "backgrounds/vagabon_miyamoto.mp4",
   "backgrounds/ushio_noa.mp4",
@@ -8,13 +8,13 @@ const videos = [
 ];
 const videoElement = document.getElementById("bg-video");
 videoElement.src = videos[Math.floor(Math.random()*videos.length)];
+videoElement.style.filter = "brightness(50%)";
 
 // Typing effect
 const lines = document.querySelectorAll(".terminal-bio .line");
 const recentVideo = document.getElementById("recent-video");
 const gameCards = document.querySelectorAll(".game-card");
 let currentLine = 0;
-let typingSpeed = 50; // 0.05s
 
 function typeLine(lineIndex){
   const line = lines[lineIndex];
@@ -29,8 +29,9 @@ function typeLine(lineIndex){
       clearInterval(typing);
       currentLine++;
 
+      // Trigger video after "Most Recent Video" line
       if(text.includes("Most Recent Video")){
-        setTimeout(()=>{
+        setTimeout(() => {
           recentVideo.classList.add("show");
           gameCards.forEach((card,index)=>{
             setTimeout(()=>card.classList.add("show"), index*300);
@@ -39,39 +40,52 @@ function typeLine(lineIndex){
       }
 
       if(currentLine < lines.length){
-        setTimeout(()=>typeLine(currentLine), 200);
+        setTimeout(()=>typeLine(currentLine), 100); // cursor speed faster
       }
     }
-  }, typingSpeed);
+  },50); // typing speed ~0.05s
 }
-
 typeLine(currentLine);
+
+// ---- Fetch Valorant rank ----
+async function fetchValorantRank(){
+  const rankElement = document.getElementById("valorant-rank");
+  rankElement.textContent = "Gold 1 (updated 28/12/2025)";
+}
 
 // ---- Fetch osu! stats ----
 async function fetchOsuStats() {
   const username = "NikiOnOsu";
   const apiKey = [
-    "5f18654c","9151ec0b","d95f06f2","5136cf9b","0be345d6"
+    "5f18654c",
+    "9151ec0b",
+    "d95f06f2",
+    "5136cf9b",
+    "0be345d6"
   ].join("");
 
   try {
-    const response = await fetch(`https://osu.ppy.sh/api/get_user?k=${apiKey}&u=${username}`);
+    const response = await fetch(
+      `https://osu.ppy.sh/api/get_user?k=${apiKey}&u=${username}`
+    );
     const data = await response.json();
+
     const globalRank = document.getElementById("osu-global-rank");
     const countryRank = document.getElementById("osu-country-rank");
 
-    if(data && data.length > 0){
+    if (data && data.length > 0) {
       globalRank.textContent = data[0].pp_rank;
       countryRank.textContent = data[0].pp_country_rank;
     } else {
       globalRank.textContent = "N/A";
       countryRank.textContent = "N/A";
     }
-  } catch(err){
+  } catch (err) {
     console.error("osu! API error:", err);
     document.getElementById("osu-global-rank").textContent = "Error";
     document.getElementById("osu-country-rank").textContent = "Error";
   }
 }
 
+fetchValorantRank();
 fetchOsuStats();
