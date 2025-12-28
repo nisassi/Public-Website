@@ -3,103 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OhNikx — Official Website</title>
-
-<link rel="icon" type="image/png" href="assets/icons/favicon.png">
+<title>OhNikx's Official Website</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='70' font-size='70'>❯</text></svg>">
 </head>
-
 <body>
   <!-- Background video -->
-  <video id="bg-video" autoplay muted loop playsinline></video>
+  <video id="bg-video" autoplay muted loop></video>
   <div class="overlay"></div>
 
-  <main class="content">
+  <!-- Main content -->
+  <div class="content">
+    <!-- Title -->
+    <h1 id="welcome-title">Welcome, user.</h1>
 
-    <!-- HERO -->
-    <section class="hero">
-      <h1 class="hero-title">
-        <span class="prompt">&gt;</span> Welcome, user.
-      </h1>
+    <!-- Terminal bio -->
+    <div class="terminal-bio" id="terminal">
+      <span class="line" data-text='/home/ohnikx > Accessing User "OhNikx"'></span>
+      <span class="line" data-text='/home/ohnikx > Login Complete! Additional Note From Creator: Welcome to my Website!'></span>
+      <span class="line" data-text='/home/ohnikx > Please make sure to report any bug in the server. You can find the link on the bottom of the page! <3'></span>
+      <span class="line" data-text='/home/ohnikx > Learning C, Python, HTML and Zsh'></span>
+      <span class="line" data-text='/home/ohnikx > Upcoming Content Creator. Support me!'></span>
+      <span class="line" data-text='/home/ohnikx > Here is my most recent video'></span>
+    </div>
 
-      <div class="terminal-bio">
-        <span class="line" data-text='/home/ohnikx > Accessing user "OhNikx"'></span>
-        <span class="line" data-text='/home/ohnikx > Login successful'></span>
-        <span class="line" data-text='/home/ohnikx > Learning C, Python, HTML, Zsh'></span>
-        <span class="line" data-text='/home/ohnikx > Upcoming content creator'></span>
-        <span class="line" data-text='/home/ohnikx > Most Recent Video'></span>
-      </div>
-    </section>
+    <!-- Recent Video -->
+    <div class="section" id="recent-video">
+      <h2>Recent Video</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/KEOu88B9Sm0" 
+        title="YouTube video player" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
 
-    <!-- RECENT VIDEO -->
-    <section class="section" id="recent-video">
-      <iframe
-        src="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-      </iframe>
-    </section>
+    <!-- Games -->
+    <div class="section" id="games">
+      <h2>Games I Play</h2>
 
-    <!-- GAMES -->
-    <section class="section">
-      <h2>Games</h2>
-
-      <div class="game-card show">
+      <!-- Valorant -->
+      <div class="game-card" id="valorant">
         <h3>VALORANT</h3>
-        <p>Rank: <span id="valorant-rank">Gold 1</span></p>
-        <p>Sensitivity: 0.265 — 800 DPI</p>
+        <p>Current Rank: <span id="valorant-rank">Gold 1 (updated 28/12/2025)</span></p>
         <p>Mains: Jett, Phoenix, Gekko, Cypher, Skye</p>
+        <p>Sensitivity: 0.265 @ 800 DPI</p>
+        <!-- Twitter Clip -->
+        <blockquote class="twitter-tweet" data-dnt="true">
+          <p lang="en" dir="ltr">&quot;VALORANT isn&#39;t confusing&quot;<br>VALORANT: 
+            <a href="https://t.co/6Q7Gzfwy44">pic.twitter.com/6Q7Gzfwy44</a>
+          </p>
+          &mdash; slow (@slowiscool)
+          <a href="https://twitter.com/slowiscool/status/1694809764809601469?ref_src=twsrc%5Etfw">August 24, 2023</a>
+        </blockquote>
       </div>
 
-      <div class="game-card show media-card">
-        <video
-          src="clips/osu!/1228.mp4"
-          autoplay
-          muted
-          loop
-          playsinline>
-        </video>
-        <div>
-          <h3>osu!</h3>
-          <p>Global Rank: <span id="osu-global-rank">Loading...</span></p>
-          <p>Country Rank: <span id="osu-country-rank">Loading...</span></p>
-          <p>Keyboard: Attack Shark X65 HE</p>
-          <p>Tablet: Wacom CTL-4100WL</p>
-          <p>Aim Style: Drag</p>
-        </div>
+      <!-- osu! -->
+      <div class="game-card" id="osu">
+        <h3>osu!</h3>
+        <video src="clips/osu!/1228.mp4" autoplay muted loop class="osu-video"></video>
+        <p>Global Rank: <span id="osu-global-rank">Loading...</span></p>
+        <p>Country Rank: <span id="osu-country-rank">Loading...</span></p>
+        <p>Keyboard: Attack Shark x65he</p>
+        <p>Tablet: Wacom CTL-4100WL</p>
+        <p>Aiming style: Drag</p>
       </div>
 
-      <div class="game-card show">Fortnite — Not coming soon</div>
-      <div class="game-card show">Call of Duty — Not coming soon</div>
-      <div class="game-card show">Minecraft — Just chillin'</div>
-    </section>
+      <!-- Other games -->
+      <div class="game-card">Fortnite — Not Coming Soon... Maybe</div>
+      <div class="game-card">Call of Duty — Not Coming Soon... Maybe</div>
+      <div class="game-card">Minecraft — Erm.. Yea nah it's not coming out soon</div>
+    </div>
 
-    <!-- SETUP -->
-    <section class="section">
+    <!-- Equipment -->
+    <div class="section" id="equipment">
       <h2>Equipment</h2>
-      <ul>
-        <li>CPU: i7-12700KF</li>
-        <li>GPU: RTX 5070 12GB</li>
-        <li>RAM: 16GB DDR4 3200MHz</li>
-        <li>Monitor: Samsung Odyssey G4 240Hz</li>
-        <li>Mouse: G Pro X Superlight 2</li>
-        <li>Keyboard: Attack Shark X65 HE</li>
-        <li>Headset: HyperX Cloud III</li>
-      </ul>
-    </section>
-
-    <!-- SOCIALS -->
-    <footer class="socials">
-      <a href="https://www.youtube.com/@OhNikx"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.tiktok.com/@ohniikx"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/ohniikx"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.twitch.tv/OhNiikx"><i class="fab fa-twitch"></i></a>
-      <a href="https://discord.gg/Wr3Dyacpva"><i class="fab fa-discord"></i></a>
-    </footer>
-
-  </main>
-
-<script src="script.js"></script>
-</body>
-</html>
+      <p>CPU: Inte
