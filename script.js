@@ -1,3 +1,4 @@
+// Random background video
 const videos = [
   "backgrounds/vagabon_miyamoto.mp4",
   "backgrounds/ushio_noa.mp4",
