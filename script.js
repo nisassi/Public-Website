@@ -4,51 +4,52 @@ const videos = [
   "backgrounds/ushio_noa.mp4",
   "backgrounds/two_heavens_as_one.mp4",
   "backgrounds/midnight_bloom.mp4",
-  "backgrounds/wandering-swordsman.mp4"
+  "backgrounds/wandering_swordsman.mp4"
 ];
 const videoElement = document.getElementById("bg-video");
-videoElement.src = videos[Math.floor(Math.random()*videos.length)];
-videoElement.style.filter = "brightness(50%)";
+videoElement.src = videos[Math.floor(Math.random() * videos.length)];
 
 // Typing effect
 const lines = document.querySelectorAll(".terminal-bio .line");
 const recentVideo = document.getElementById("recent-video");
 const gameCards = document.querySelectorAll(".game-card");
+
 let currentLine = 0;
 
-function typeLine(lineIndex){
+function typeLine(lineIndex) {
   const line = lines[lineIndex];
   const text = line.dataset.text;
   let i = 0;
   line.style.opacity = 1;
 
-  const typing = setInterval(()=>{
+  const typing = setInterval(() => {
     line.textContent += text[i];
     i++;
-    if(i === text.length){
+    if (i === text.length) {
       clearInterval(typing);
       currentLine++;
 
-      // Trigger video after "Most Recent Video" line
-      if(text.includes("Most Recent Video")){
+      // Trigger video and game cards after "Recent Video" line
+      if (text.includes("Recent Video")) {
         setTimeout(() => {
           recentVideo.classList.add("show");
-          gameCards.forEach((card,index)=>{
-            setTimeout(()=>card.classList.add("show"), index*300);
+          gameCards.forEach((card, index) => {
+            setTimeout(() => card.classList.add("show"), index * 300);
           });
         }, 300);
       }
 
-      if(currentLine < lines.length){
-        setTimeout(()=>typeLine(currentLine), 100); // cursor speed faster
+      if (currentLine < lines.length) {
+        setTimeout(() => typeLine(currentLine), 50);
       }
     }
-  },50); // typing speed ~0.05s
+  }, 50); // Cursor speed ~0.05s per char
 }
+
 typeLine(currentLine);
 
-// ---- Fetch Valorant rank ----
-async function fetchValorantRank(){
+// ---- Fetch Valorant rank (placeholder) ----
+async function fetchValorantRank() {
   const rankElement = document.getElementById("valorant-rank");
   rankElement.textContent = "Gold 1 (updated 28/12/2025)";
 }
