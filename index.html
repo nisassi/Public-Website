@@ -3,68 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OhNikx's Official Website</title>
+<title>OhNikx</title>
+
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
-  <!-- Background video -->
-  <video id="bg-video" autoplay muted loop></video>
+  <!-- Background -->
+  <video id="bg-video" autoplay muted loop playsinline></video>
   <div class="overlay"></div>
 
-  <!-- Main content -->
-  <div class="content">
-    <!-- Terminal bio -->
-    <div class="terminal-bio" id="terminal">
+  <main class="content">
+
+    <!-- Terminal -->
+    <div class="terminal-bio">
       <span class="line" data-text='/home/ohnikx > Accessing User "OhNikx"'></span>
-      <span class="line" data-text='/home/ohnikx > Login Complete! Additional Note From Creator: Welcome to my Website!'></span>
-      <span class="line" data-text='/home/ohnikx > Learning C, Python, HTML and Zsh'></span>
-      <span class="line" data-text='/home/ohnikx > Upcoming Content Creator. Support me!'></span>
+      <span class="line" data-text='/home/ohnikx > Login Complete! Welcome.'></span>
+      <span class="line" data-text='/home/ohnikx > Learning C, Python, HTML & Zsh'></span>
+      <span class="line" data-text='/home/ohnikx > Upcoming Content Creator'></span>
       <span class="line" data-text='/home/ohnikx > Most Recent Video'></span>
     </div>
 
-    <!-- Recent Video -->
-    <div class="section" id="recent-video">
-      <h2>Recent Video</h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/REPLACE_WITH_VIDEO_ID" 
-        title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-    </div>
+    <!-- Recent video -->
+    <section class="section" id="recent-video">
+      <iframe
+        src="https://www.youtube.com/embed/REPLACE_VIDEO_ID"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </section>
 
     <!-- Games -->
-    <div class="section" id="games">
-      <h2>Games I Play</h2>
+    <section class="section" id="games">
+      <h2>Games</h2>
 
-      <!-- Valorant -->
-      <div class="game-card" id="valorant">
-        <h3>VALORANT</h3>
-        <p>Current Rank: <span id="valorant-rank">Loading...</span></p>
-        <p>Mains: Jett, Phoenix, Gekko, Cypher, Skye</p>
+      <!-- VALORANT -->
+      <div class="game-card">
+        <div class="media triangle">
+          <blockquote class="twitter-tweet">
+            <a href="https://twitter.com/slowiscool/status/1694809764809601469"></a>
+          </blockquote>
+        </div>
+
+        <div class="game-info">
+          <h3>VALORANT</h3>
+          <p>Rank: Gold 1</p>
+          <p>Mains: Jett, Phoenix, Gekko, Cypher, Skye</p>
+          <p>Sensitivity: 0.265 @ 800 DPI</p>
+        </div>
       </div>
 
-      <!-- osu! -->
-      <div class="game-card" id="osu">
-        <h3>osu!</h3>
-        <p>Global Rank: <span id="osu-global-rank">Loading...</span></p>
-        <p>Country Rank: <span id="osu-country-rank">Loading...</span></p>
+      <!-- OSU -->
+      <div class="game-card">
+        <div class="media triangle">
+          <video src="clips/osu!/1228.mp4" autoplay loop muted playsinline></video>
+        </div>
+
+        <div class="game-info">
+          <h3>osu!</h3>
+          <p>Global Rank: <span id="osu-global-rank">Loading…</span></p>
+          <p>Country Rank: <span id="osu-country-rank">Loading…</span></p>
+          <p>Keyboard: Attack Shark X65 HE</p>
+          <p>Tablet: Wacom CTL-4100WL</p>
+          <p>Aiming: Drag</p>
+        </div>
       </div>
 
       <!-- Other games -->
-      <div class="game-card">Fortnite — Casual/Competitive player</div>
-      <div class="game-card">Call of Duty — Casual/Competitive player</div>
-      <div class="game-card">Minecraft — Just chillin'</div>
-    </div>
+      <div class="game-card text-only">Fortnite — Not Coming Soon</div>
+      <div class="game-card text-only">Call of Duty — Not Coming Soon</div>
+      <div class="game-card text-only">Minecraft — Just chillin'</div>
+    </section>
 
-    <!-- Social links -->
+    <!-- Setup -->
+    <section class="section">
+      <h2>Equipment</h2>
+      <ul>
+        <li>CPU: i7-12700KF</li>
+        <li>GPU: RTX 5070 12GB</li>
+        <li>RAM: 16GB DDR4 3200MHz</li>
+        <li>Storage: 500GB + 300GB SSD</li>
+        <li>Mouse: Logitech G Pro X Superlight 2</li>
+        <li>Keyboard: Attack Shark X65 HE</li>
+        <li>Tablet: Wacom CTL-4100WL</li>
+        <li>Monitor: Samsung Odyssey G4 240Hz</li>
+        <li>Headset: HyperX Cloud III</li>
+      </ul>
+    </section>
+
+    <!-- Socials -->
     <div class="socials">
-      <a href="https://www.youtube.com/@OhNikx" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.youtube.com/@OhNikx2" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.tiktok.com/@ohniikx" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <a href="https://www.instagram.com/ohniikx" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.twitch.tv/OhNiikx" target="_blank"><i class="fab fa-twitch"></i></a>
-      <a href="https://discord.gg/Wr3Dyacpva" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://youtube.com/@OhNikx"><i class="fab fa-youtube"></i></a>
+      <a href="https://youtube.com/@OhNikx2"><i class="fab fa-youtube"></i></a>
+      <a href="https://tiktok.com/@ohniikx"><i class="fab fa-tiktok"></i></a>
+      <a href="https://instagram.com/ohniikx"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitch.tv/OhNiikx"><i class="fab fa-twitch"></i></a>
+      <a href="https://discord.gg/Wr3Dyacpva"><i class="fab fa-discord"></i></a>
     </div>
-  </div>
 
-  <script src="script.js"></script>
+  </main>
+
+<script src="script.js"></script>
+<script async src="https://platform.twitter.com/widgets.js"></script>
 </body>
 </html>
