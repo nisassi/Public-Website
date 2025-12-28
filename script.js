@@ -49,18 +49,45 @@ function typeLine(lineIndex){
 
 typeLine(currentLine);
 
-// ---- Fetch Valorant rank (placeholder) ----
+// ---- Fetch Valorant rank ----
 async function fetchValorantRank(){
   const rankElement = document.getElementById("valorant-rank");
   rankElement.textContent = "Gold 1 (updated 28/12/2025)";
 }
 
-// ---- Fetch osu! stats (placeholder) ----
-async function fetchOsuStats(){
-  const globalRank = document.getElementById("osu-global-rank");
-  const countryRank = document.getElementById("osu-country-rank");
-  globalRank.textContent = "120,424";
-  countryRank.textContent = "5,210";
+// ---- Fetch osu! stats ----
+async function fetchOsuStats() {
+  const username = "NikiOnOsu";
+
+  const apiKey = [
+    "5f18654c",
+    "9151ec0b",
+    "d95f06f2",
+    "5136cf9b",
+    "0be345d6"
+  ].join("");
+
+  try {
+    const response = await fetch(
+      `https://osu.ppy.sh/api/get_user?k=${apiKey}&u=${username}`
+    );
+    const data = await response.json();
+
+    const globalRank = document.getElementById("osu-global-rank");
+    const countryRank = document.getElementById("osu-country-rank");
+
+    if (data && data.length > 0) {
+      globalRank.textContent = data[0].pp_rank;
+      countryRank.textContent = data[0].pp_country_rank;
+    } else {
+      globalRank.textContent = "N/A";
+      countryRank.textContent = "N/A";
+    }
+  } catch (err) {
+    console.error("osu! API error:", err);
+    document.getElementById("osu-global-rank").textContent = "Error";
+    document.getElementById("osu-country-rank").textContent = "Error";
+  }
 }
 
 fetchValorantRank();
